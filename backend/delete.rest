@@ -1,0 +1,32 @@
+GET http://localhost:3001/api/notes/
+
+###
+POST http://localhost:3001/api/notes/ HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjY3OGYwNTZkOTFkMDU5YTI5Njc0N2IxNyIsImlhdCI6MTczODQzMjY4OH0.1LgwhlpYojHDLTXnH7bl2C8oC--ZihnjltzqC3YHsfg
+
+{
+    "content": "Hi, I am root 2",
+    "important": true,
+    "user": "root"
+}
+###
+DELETE http://localhost:3001/api/notes/678b38c43725684d9b3f230e
+###
+POST http://localhost:3001/api/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "root",
+    "name": "Superuser",
+    "password": "salainen"
+}
+
+###
+POST http://localhost:3001/api/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "root",
+    "password": "salainen"
+}

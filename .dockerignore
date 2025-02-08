@@ -1,0 +1,27 @@
+# flyctl launch added from part2demo\.gitignore
+# Logs
+part2demo\**\logs
+part2demo\**\*.log
+part2demo\**\npm-debug.log*
+part2demo\**\yarn-debug.log*
+part2demo\**\yarn-error.log*
+part2demo\**\pnpm-debug.log*
+part2demo\**\lerna-debug.log*
+
+part2demo\**\node_modules
+part2demo\**\dist
+part2demo\**\dist-ssr
+part2demo\**\*.local
+
+# Editor directories and files
+part2demo\**\.vscode\*
+!part2demo\**\.vscode\extensions.json
+part2demo\**\.idea
+part2demo\**\.DS_Store
+part2demo\**\*.suo
+part2demo\**\*.ntvs*
+part2demo\**\*.njsproj
+part2demo\**\*.sln
+part2demo\**\*.sw?
+fly.toml
+
