@@ -23,6 +23,7 @@ a:hover {
 }
 
 body {
+  display: grid;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -64,10 +65,12 @@ button:focus-visible {
 button.important {
   background: transparent;
   border: transparent;
+  margin-left: 0em;
 }
 button.important:focus ,
 button.important:focus-visible {
   outline: transparent;
+  
 }
 
 

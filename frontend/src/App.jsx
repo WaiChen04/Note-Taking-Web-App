@@ -166,10 +166,6 @@ const App = () => {
     ? notes
     : notes.filter(note => note.important === true)
 
-  const handleNoteChange = (event) => {
-    console.log(event.target.value)
-    setNewNote(event.target.value)
-  }
 
 
   const loginForm = () => {
@@ -231,6 +227,12 @@ const App = () => {
   return (
     <div>
       <h1>Notes</h1>
+      <h3>This is a note-taking web app. You can start adding notes through making a new account.
+        <br />
+        If you already have an account, you can log in and start adding notes.
+        <br />
+        You can delete and change the importances of the notes.
+      </h3>
 
       <Notification message={errorMessage} />
       <Warning message={WarningMessage} />
