@@ -35,6 +35,7 @@ const SignupForm = ({
              onChange={handleNameChange}
            />
        </div>
+       <br></br>
          <button type="submit">Create Account</button>
        </form>
      </div>
