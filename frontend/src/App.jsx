@@ -83,6 +83,7 @@ const App = () => {
     window.localStorage.removeItem('loggedNoteappUser')
     setUser(null)
     setWarning('You have logged out')
+    setNotes([])
     setTimeout(() => {
     setWarning(null)
     }, 5000)
@@ -107,14 +108,6 @@ const App = () => {
 
 
   useEffect(() => {
-    noteService
-      .getAll()
-      .then(initialNotes => {
-        setNotes(initialNotes)
-      })
-  }, [])
-
-  useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('loggedNoteappUser')
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
@@ -122,6 +115,27 @@ const App = () => {
       noteService.setToken(user.token)
     }
   }, [])
+
+
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem('loggedNoteappUser')
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      setUser(user)
+      noteService.setToken(user.token)
+    } else {
+      setUser(null)
+      setNotes([])
+    }
+  }, [])
+
+  useEffect(() => {
+    if (user) {
+      noteService.getAll(user.id).then(initialNotes => {
+        setNotes(initialNotes)
+      })
+    }
+  }, [user]) 
 
   const noteFormRef = useRef()
 
