@@ -262,11 +262,13 @@ const App = () => {
       }
 
 
-      <div>
-        <button onClick={() => setShowAll(!showAll)}>
-          show {showAll ? 'important' : 'all'}
-        </button>
-      </div>
+{notes.length > 0 && (
+  <div>
+    <button onClick={() => setShowAll(!showAll)}>
+      show {showAll ? 'important' : 'all'}
+    </button>
+  </div>
+)}
       <ul>
         {notesToShow.map(note =>
           <Note key={note.id}
